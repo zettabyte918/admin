@@ -1,0 +1,109 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  padding  >
+  <ion-grid>
+
+
+
+
+    <ion-col sizeLg="9" sizeMd="9" sizeXs="12" >
+      <ion-item  *ngFor="let item of posts"  lines="none">    
+          <ion-button  color="medium" slot="end" size="small"shape="round" *ngIf="item.role=='1'" > Client </ion-button>
+          <ion-button  color="medium" slot="end" size="small"shape="round" *ngIf="item.role=='2'" > Technicien </ion-button>
+          <ion-button  color="medium" slot="end" size="small"shape="round" *ngIf="item.role=='3'" > Admin </ion-button>
+          <ion-label> 
+          <b>  id: {{item.id}}</b>   <br>
+          entreprise: <b> {{item.company}}</b>   <br>
+          <b> {{item.salutation}} {{item.firstname}} {{item.lastname}}</b>  <br>
+          <b>  {{item.address}} </b><br>
+          <b>  {{item.cp}} {{item.city}}</b> <br>
+          <b>  {{item.state}} {{item.country}}</b> <br>
+          Mobile : <b> {{item.phone_mobile}} </b> <br>
+          Téléphone :  <b>   {{item.phone_number}} </b> <br>
+          E-mail :  <b>  {{item.email}} </b> <br>
+          </ion-label>
+          </ion-item>
+      </ion-col>
+
+
+
+
+      
+
+        <ion-row style="padding-top:20px;" *ngIf="role==3">
+          <ion-col col-4 col-md-4 style="text-align: center;">
+        
+     
+          <ion-item   [routerLink]="['/customers']" >
+            <ion-button  color="success" > <ion-icon name="person-outline"></ion-icon> </ion-button>    
+            <p> <b> Voir le clients </b>  </p> 
+          </ion-item>  
+
+     
+          <ion-item   [routerLink]="['/techs']" >
+            <ion-button  color="success" > <ion-icon name="person-outline"></ion-icon> </ion-button>    
+            <p> <b> Voir les techniciens</b> </p> 
+          </ion-item>  
+     
+    
+
+        </ion-col>
+     
+
+        <ion-col col-4 col-md-4  class="ion-text-center">
+      
+          <ion-item   [routerLink]="['/calendar']"  >
+            <ion-button  color="tertiary"> <ion-icon name="calendar-outline"></ion-icon> </ion-button>    
+            <p> <b>Planning </b> </p> 
+          </ion-item>  
+          <ion-item   [routerLink]="['/map']"  >
+            <ion-button  color="tertiary"><ion-icon name="map-outline"></ion-icon></ion-button>    
+            <p> <b>Carte </b> </p> 
+          </ion-item>   
+        </ion-col>
+
+
+        <ion-col col-4 col-md-4  class="ion-text-center">
+     
+          <ion-item  [routerLink]="['/invoices']"  >
+            <ion-button  color="warning">  <ion-icon name="document-outline"></ion-icon> </ion-button>    
+            <p> <b> Voir les factures </b> </p> 
+          </ion-item>  
+          <ion-item  [routerLink]="['/quotes']"  >
+            <ion-button  color="warning"> <ion-icon name="document-outline"></ion-icon> </ion-button>    
+            <p> <b> Voir les devis </b> </p> 
+          </ion-item>  
+        </ion-col>
+
+      </ion-row >
+
+
+      <ion-row style="padding-top:20px;" *ngIf="locationButton">
+        <ion-col col-12 col-md-12 class="ion-text-center">
+      <ion-item>
+        <ion-button  (click)="getPosition()" color="danger" > <ion-icon name="navigate-circle-outline"></ion-icon> <b> Validez votre localisation </b></ion-button>    
+      </ion-item>  
+    </ion-col>
+
+    </ion-row >
+
+    <ion-list lines="none" style="margin-top: 20px;" *ngIf="location" >
+      <ion-col sizeLg="12" sizeMd="12" sizeXs="12" >
+      <div id="mapId2" style="width: 100%; height: 300px"></div>
+      </ion-col>   
+</ion-list>
+ 
+</ion-grid>
+   
+
+
+</ion-content>

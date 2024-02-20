@@ -1,0 +1,88 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu type="overlay" menuId="menu1" contentId="main-content" style="background-color:#1e1e1e;">
+      <ion-content style="background-color:#1e1e1e;">
+        <ion-list id="inbox-list">
+         Client
+          <img  src="../assets/icon/logobe.jpg"  >
+          <ion-menu-toggle auto-hide="false" id="menu1" *ngFor="let p of appClient; let i = index" style="background-color:#1e1e1e;">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list id="labels-list">
+            <ion-item lines="full"  (click)="logout()">
+              <ion-icon slot="start" name="log-out"></ion-icon>
+              <ion-label>
+               Déconnexion
+              </ion-label>
+            </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-menu type="overlay" menuId="menu2" contentId="main-content" style="background-color:#1e1e1e;">
+      <ion-content style="background-color:#1e1e1e;">
+  
+        <ion-list id="inbox-list">
+          Technicien
+          <img  src="../assets/icon/logobe.jpg"  >
+         
+          <ion-menu-toggle auto-hide="false" id="menu2" *ngFor="let p of appTech; let i = index" style="background-color:#1e1e1e;">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list id="labels-list">
+            <ion-item lines="full"  (click)="logout()">
+              <ion-icon slot="start" name="log-out"></ion-icon>
+              <ion-label>
+               Déconnexion
+              </ion-label>
+            </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+
+
+    <ion-menu type="overlay" menuId="menu3" contentId="main-content" style="background-color:#1e1e1e;">
+      <ion-content style="background-color:#1e1e1e;">
+      
+        <ion-list id="inbox-list">
+          Administrateur
+          <img  src="../assets/icon/logobe.jpg"  >
+          <ion-menu-toggle auto-hide="false" id="menu3" *ngFor="let p of appPages; let i = index" style="background-color:#1e1e1e;">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list id="labels-list">
+            <ion-item lines="full"  (click)="logout()">
+              <ion-icon slot="start" name="log-out"></ion-icon>
+              <ion-label>
+               Déconnexion
+              </ion-label>
+            </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+
+
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+
+  
+</ion-app>

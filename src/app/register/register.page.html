@@ -1,0 +1,248 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter un client </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<ion-row>
+
+
+  <ion-col sizeLg="3" sizeMd="3" sizeXs="12" >
+  </ion-col>
+  <ion-col sizeLg="6" sizeMd="6" sizeXs="12" >
+
+
+    <ion-list lines="none"  >
+      <ion-row >
+        <ion-col sizeLg="12" sizeMd="12" sizeXs="12" >
+          <ion-row >
+            <ion-col sizeLg="12" sizeMd="12" sizeXs="12" > 
+              E-mail ( obligatoire ) <br>
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked">Email</ion-label>
+                <ion-input inputmode="text"[(ngModel)]="email" placeholder="Email">  </ion-input>
+              </ion-item>
+            </ion-col>
+           </ion-row>
+        </ion-col>
+    </ion-row>
+  </ion-list>
+
+
+
+        <ion-list lines="none"   style="margin-top: 20px;">
+          <ion-row >
+            <ion-col sizeLg="12" sizeMd="12" sizeXs="12" >
+              <ion-row >
+                <ion-col sizeLg="12" sizeMd="12" sizeXs="12" > 
+                 Infomations  <br>
+                  <ion-item class="roundedInput">
+                    <ion-label color="dark" position="stacked">Nom entreprise</ion-label>
+                    <ion-input inputmode="text"[(ngModel)]="company" placeholder="Nom entreprise">  </ion-input>
+                  </ion-item>
+                </ion-col>
+               </ion-row>
+                        
+               <ion-row >
+                  <ion-col sizeLg="12" sizeMd="12" sizeXs="12" > 
+                    <ion-item  class="roundedInput">
+                      <ion-label position="stacked">Type</ion-label>
+                      <ion-select multiple="false" [(ngModel)]="customer_type">
+                        <ion-select-option value="business">Entreprise</ion-select-option>
+                        <ion-select-option value="individual">Particulier</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                 <ion-row >
+                <ion-col sizeLg="2" sizeMd="2" sizeXs="12" >
+                  <ion-item  class="roundedInput">
+                    <ion-label position="stacked">Civilité </ion-label>
+                    <ion-select multiple="false" [(ngModel)]="salutation">
+                      <ion-select-option value="M.">M.</ion-select-option>
+                      <ion-select-option value="Mme.">Mme.</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+               </ion-col>
+                <ion-col sizeLg="5" sizeMd="5" sizeXs="12" >
+                   <ion-item class="roundedInput">
+                     <ion-label color="dark" position="stacked">Nom ( obligatoire )</ion-label>
+                    <ion-input inputmode="text"[(ngModel)]="lastname" placeholder="Nom ( obligatoire )" >  </ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col sizeLg="5" sizeMd="5" sizeXs="12" > 
+                   <ion-item class="roundedInput">
+                    <ion-label color="dark" position="stacked">Prénom ( obligatoire )</ion-label>
+                    <ion-input inputmode="text"[(ngModel)]="firstname" placeholder="Prénom ( obligatoire )">  </ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            <ion-row >
+              <ion-col sizeLg="12" sizeMd="12" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-label color="dark" position="stacked">Adresse</ion-label>
+                  <ion-input inputmode="text"[(ngModel)]="address" placeholder="Adresse">  </ion-input>
+                </ion-item>
+              </ion-col>
+             </ion-row>
+
+            <ion-row   >
+              <ion-col sizeLg="5" sizeMd="5" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-label color="dark" position="stacked">CP</ion-label>
+                  <ion-input inputmode="text"[(ngModel)]="cp" placeholder="Code postal">  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col sizeLg="7" sizeMd="7" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-label color="dark" position="stacked">Ville</ion-label>
+                  <ion-input inputmode="text"[(ngModel)]="city" placeholder="Ville">  </ion-input>
+                </ion-item>
+              </ion-col>
+             </ion-row>
+
+             <ion-row   >
+              <ion-col sizeLg="5" sizeMd="5" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-label color="dark" position="stacked">Région</ion-label>
+                  <ion-input inputmode="text"[(ngModel)]="state" placeholder="Région">  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col sizeLg="7" sizeMd="7" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-label color="dark" position="stacked">Pays</ion-label>
+                  <ion-input inputmode="text"[(ngModel)]="country" placeholder="Pays">  </ion-input>
+                </ion-item>
+              </ion-col>
+             </ion-row>
+
+            <ion-row >
+              <ion-col sizeLg="6" sizeMd="6" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-label color="dark" position="stacked">Téléphone ( Fixe )</ion-label>
+                  <ion-input inputmode="phone"[(ngModel)]="phone_number" placeholder="Téléphone fixe">  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col sizeLg="6" sizeMd="6" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-label color="dark" position="stacked"> Mobile </ion-label>
+                  <ion-input inputmode="phone"[(ngModel)]="phone_mobile" placeholder="mobile">  </ion-input>
+                </ion-item>
+              </ion-col>
+             </ion-row>
+             <ion-row >
+              <ion-col sizeLg="12" sizeMd="12" sizeXs="12" > 
+                <ion-item class="roundedInput">
+                  <ion-textarea placeholder="Ajoutez un commentaire ici ..." [autoGrow]="true" [(ngModel)]="notes">
+                </ion-textarea>
+                </ion-item>
+              </ion-col>
+             </ion-row>
+            
+            </ion-col>
+           
+        </ion-row>
+      </ion-list>
+
+
+
+      <ion-list lines="none"  style="margin-top: 20px;" >
+        <ion-row >
+          <ion-col sizeLg="12" sizeMd="12" sizeXs="12" >
+          <ion-row >
+            <ion-col sizeLg="12" sizeMd="12" sizeXs="12" >
+              Adresse de facturation    <br>
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked">Adresse de facturation</ion-label>
+                <ion-input inputmode="text"[(ngModel)]="shipping_address" placeholder="Adresse facturation">  </ion-input>
+              </ion-item>
+            </ion-col>
+           </ion-row>
+
+          <ion-row   >
+            <ion-col sizeLg="5" sizeMd="5" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked">CP facturation</ion-label>
+                <ion-input inputmode="text"[(ngModel)]="shipping_cp" placeholder="Code postal facturation">  </ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col sizeLg="7" sizeMd="7" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked">Ville facturation</ion-label>
+                <ion-input inputmode="text"[(ngModel)]="shipping_city" placeholder="Ville facturation">  </ion-input>
+              </ion-item>
+            </ion-col>
+           </ion-row>
+
+           <ion-row   >
+            <ion-col sizeLg="5" sizeMd="5" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked">Région facturation</ion-label>
+                <ion-input inputmode="text"[(ngModel)]="shipping_state" placeholder="Région facturation">  </ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col sizeLg="7" sizeMd="7" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked">Pays facturation</ion-label>
+                <ion-input inputmode="text"[(ngModel)]="shipping_country" placeholder="Pays facturation">  </ion-input>
+              </ion-item>
+            </ion-col>
+           </ion-row>
+
+          <ion-row >
+            <ion-col sizeLg="6" sizeMd="6" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked">Téléphone PRO ( Fixe )</ion-label>
+                <ion-input inputmode="phone"[(ngModel)]="shipping_phone" placeholder="Téléphone Pro">  </ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col sizeLg="6" sizeMd="6" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked"> Autre téléphone PRO</ion-label>
+                <ion-input inputmode="phone"[(ngModel)]="billing_phone" placeholder="Autre téléphone">  </ion-input>
+              </ion-item>
+            </ion-col>
+           </ion-row>
+
+
+           <ion-row >
+            <ion-col sizeLg="6" sizeMd="6" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked"> Siret </ion-label>
+                <ion-input inputmode="phone"[(ngModel)]="siret_number" placeholder="Numéro siret">  </ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col sizeLg="6" sizeMd="6" sizeXs="12" > 
+              <ion-item class="roundedInput">
+                <ion-label color="dark" position="stacked"> Numéro de TVA </ion-label>
+                <ion-input inputmode="phone"[(ngModel)]="tva_number" placeholder="Numéro TVA">  </ion-input>
+              </ion-item>
+            </ion-col>
+           </ion-row>
+     
+            <ion-item >
+              <div class="item-note" slot="end">
+         
+              <ion-button color="danger" size="medium" (click)="doSaveProfil()">Enregistrer</ion-button>
+              </div>
+             </ion-item>
+          </ion-col>
+       
+      </ion-row>
+    </ion-list>
+</ion-col>  
+
+
+<ion-col sizeLg="3" sizeMd="3" sizeXs="12" >
+</ion-col>
+</ion-row>
+
+
+
+
+
+
+
+</ion-content>
